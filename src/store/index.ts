@@ -1,17 +1,14 @@
-import Vue from 'vue'
+import { RootState } from '@/interfaces/StoreInterface';
 import Vuex from 'vuex'
-
+import tasks from './modules/tasks'
+import Vue from 'vue';
 Vue.use(Vuex)
 
-export default new Vuex.Store({
-  state: {
-  },
-  getters: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
+const store = new Vuex.Store<RootState>({
   modules: {
+    tasks
   }
 })
+
+export default store;
+export const useStore = () => store
